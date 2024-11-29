@@ -5,6 +5,8 @@ ruby '3.1.2'
 
 #webpacker
 gem 'webpacker', '~> 5.x'
+#foreman
+gem 'foreman'
 
 gem 'nio4r', '~> 2.7', '>= 2.7.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
