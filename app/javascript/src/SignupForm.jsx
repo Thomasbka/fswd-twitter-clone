@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { safeCredentials, handleErrors } from "./utils/fetchHelper";
 
 const SignupForm = ({ onSignupSuccess }) => {
   const [formData, setFormData] = useState({ username: "", email: "", password: "" });
@@ -15,20 +16,18 @@ const SignupForm = ({ onSignupSuccess }) => {
     try {
       const response = await fetch("/api/users", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user: formData }),
+        ...safeCredentials(),
       });
+      const data = await handleErrors(response);
 
-      if (response.ok) {
-        setSuccess(true);
-        setErrors([]);
-        setFormData({ username: "", email: "", password: "" });
-        if (onSignupSuccess) onSignupSuccess();
-      } else {
-        const data = await response.json();
-        setErrors(data.errors || ["An error occurred. Please try again."]);
-      }
+      setSuccess(true);
+      setErrors([]);
+      setFormData({ username: "", email: "", password: "" });
+
+      if (onSignupSuccess) onSignupSuccess();
     } catch (error) {
+      console.error("Signup error:", error);
       setErrors(["An unexpected error occurred. Please try again."]);
     }
   };

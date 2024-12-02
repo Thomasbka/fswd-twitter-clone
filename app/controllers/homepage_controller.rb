@@ -1,5 +1,5 @@
 class HomepageController < ApplicationController
   def index
-    render file: 'public/index.html', layout: false
+    render 'index'
   end
 end

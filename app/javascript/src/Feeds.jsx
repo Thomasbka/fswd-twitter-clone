@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import TweetCard from "./TweetCard";
 import TweetInput from "./TweetInput";
-import { safeCredentials, handleErrors } from "../utils/fetchHelper";
-import CableApp from "../utils/cable";
-import "../src/styles/feeds.scss";
+import { safeCredentials, handleErrors } from "./utils/fetchHelper";
+import CableApp from "./utils/cable";
+import "./styles/feeds.scss";
 
 const Feeds = () => {
   const [tweets, setTweets] = useState([]);

@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import SignupForm from "./SignupForm"; //
-import { safeCredentials, handleErrors } from "../utils/fetchHelper";
-import "../src/styles/homepage.scss";
+import SignupForm from "./SignupForm";
+import { safeCredentials, handleErrors } from "./utils/fetchHelper";
+import "./styles/homepage.scss";
+
+const images = require.context("../images", false, /\.(png|jpe?g|svg)$/);
 
 const Homepage = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
+
   const backgroundImages = [
-    "/path/to/background_2.png",
-    "/path/to/background_3.jpg",
-    "/path/to/background_1.png",
+    images("./background_1.png"),
+    images("./background_2.png"),
+    images("./background_3.jpg"),
   ];
 
   useEffect(() => {

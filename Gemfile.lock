@@ -315,7 +315,7 @@ DEPENDENCIES
   turbolinks (~> 5.2.1)
   uglifier (~> 4.2.0)
   web-console (>= 4.2)
-  webpacker (~> 5.x)
+  webpacker (~> 5.0)
   webrick (~> 1.7)
 
 RUBY VERSION

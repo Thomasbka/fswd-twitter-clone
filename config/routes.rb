@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     resources :feeds, only: [:index]
     resources :tweets, only: [:index, :create, :destroy]
     resources :users, only: [:create, :show]
-    resources :sessions, only: [:create, :destroy]
+    resources :sessions, only: [:create, :destroy] do
+      collection do
+        get :authenticated
+      end
+    end
   end
 
   get '*path', to: 'homepage#index', constraints: ->(req) { !req.xhr? && req.format.html? }

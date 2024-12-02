@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 #webpacker
-gem 'webpacker', '~> 5.x'
+gem 'webpacker', '~> 5.0'
 #foreman
 gem 'foreman'
 
