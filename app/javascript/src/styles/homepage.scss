@@ -10,107 +10,105 @@
 }
 
 #homeback {
+  animation: fade 20s infinite;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
-  min-width: 100vw;
-  position: fixed;
-  animation: fade 30s infinite;
 }
 
-
-body {
-  min-width: 900px;
-}
-
-.fa-twitter {
-  color: #00aced;
-  font-size: 24px;
-}
-
-.main {
-  margin-top: 50px;
-}
-
-.front-card {
-  margin-top: 70px;
-}
-
-.welcome, .welcome a {
-  color: #fff;
-}
-
-#welcome-text {
-  height: 320px;
-}
-
-#welcome-text h1 {
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-#welcome-text p {
-  font-size: 20px;
-}
-
-#twit-account {
-  text-decoration: underline;
-}
-
-.btn {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.log-in, .sign-up {
-  padding: 12px;
+.navbar {
   background-color: #fff;
-  border-radius: 5px;
 }
 
-.log-in {
-  padding-bottom: 6px;
+.navbar .fa-twitter {
+  color: #1da1f2;
 }
 
-.log-in .form-group {
-  padding: 0;
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 100px;
+
+  .row {
+    width: 100%;
+  }
 }
 
-.log-in div:nth-child(2) {
-  margin-bottom: 5px;
+.welcome-section {
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #fff;
+
+    a {
+      font-size: 0.9rem;
+      color: #1da1f2;
+      text-decoration: underline;
+    }
+  }
+
+  #twit-info {
+    font-size: 0.9rem;
+    color: #fff;
+    text-shadow: none;
+    text-decoration: underline;
+  }
 }
 
-.log-in label, .log-in a {
-  font-size: 12px;
-  font-weight: 400;
-  margin-bottom: 0;
+.auth-section {
+  flex: 1; 
+  max-width: 400px;
+  margin-left: auto;
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  .log-in {
+    margin-bottom: 20px;
+  }
+
+  .btn-primary {
+    background-color: #1da1f2;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    min-width: 80px;
+  }
+
+  .remember-me {
+    margin-top: 10px;
+    color: #555;
+
+    a {
+      color: #1da1f2;
+      text-decoration: none;
+    }
+  }
 }
 
-.log-in label, .sign-up span {
-  color: #8899a6;
-}
+.password-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-.sign-up {
-  margin-top: 10px;
-}
+  .form-control.password {
+    flex: 1;
+    padding: 8px;
+  }
 
-.dropdown-menu {
-  border: none;
-}
-
-.homepage .dropdown-menu {
-  left: 0 !important;
-}
-
-.dropdown-menu li {
-  padding: 0;
-}
-
-#sign-up-btn {
-  background-color: #ffac33;
-  background-image: linear-gradient(#ffcc4d,#ffac33);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d, endColorstr=#ffac33, GradientType=0)";
-  border-color: #f1a02a;
-  color: #292f33;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  #log-in-btn {
+    padding: 6px 10px;
+    width: auto;
+  }
 }

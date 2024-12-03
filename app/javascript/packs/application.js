@@ -20,6 +20,8 @@ import { createRoot } from "react-dom/client";
 import App from "../src/App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "@fortawesome/fontawesome-free/css/all.css";
+
 
 const images = require.context('../images', true);
 const imagePath = (name) => images(name);

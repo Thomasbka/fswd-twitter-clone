@@ -1,0 +1,23 @@
+.sign-up {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+
+  p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  #sign-up-btn {
+    background-color: #ffac33;
+    background-image: linear-gradient(to bottom, #ffcc4d, #ffac33);
+    border-color: #f1a02a;
+    color: #292f33;
+    font-weight: bold;
+    padding: 10px 15px;
+    float: right;
+    margin-top: 10px;
+  }
+}

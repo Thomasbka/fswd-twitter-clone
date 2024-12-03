@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { safeCredentials, handleErrors } from "./utils/fetchHelper";
+import './styles/signupform.scss';
 
 const SignupForm = ({ onSignupSuccess }) => {
   const [formData, setFormData] = useState({ username: "", email: "", password: "" });
@@ -32,57 +33,23 @@ const SignupForm = ({ onSignupSuccess }) => {
     }
   };
 
-  return (
-    <div className="sign-up col-xs-4 col-xs-offset-1">
-      <h2>Sign Up</h2>
-      {success && <p className="success-message">Signup successful! Please log in.</p>}
-      {errors.length > 0 && (
-        <ul className="error-messages">
-          {errors.map((error, index) => (
-            <li key={index}>{error}</li>
-          ))}
-        </ul>
-      )}
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <input
-            type="text"
-            name="username"
-            className="form-control username"
-            placeholder="Username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            name="email"
-            className="form-control email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            name="password"
-            className="form-control password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button id="sign-up-btn" type="submit" className="btn btn-default btn-warning pull-right">
-          Sign Up
-        </button>
-      </form>
-    </div>
-  );
-};
-
+    return (
+      <div className="sign-up col-xs-4 col-xs-offset-1">
+        <form>
+          <p><strong>New to Twitter?</strong><span> Sign Up</span></p>
+          <div className="form-group">
+            <input type="text" className="form-control username" placeholder="Username" />
+          </div>
+          <div className="form-group mt-3">
+            <input type="email" className="form-control email" placeholder="Email" />
+          </div>
+          <div className="form-group mt-3">
+            <input type="password" className="form-control password" placeholder="Password" />
+          </div>
+          <button id="sign-up-btn" className="btn btn-warning pull-right mt-2">Sign up for Twitter</button>
+        </form>
+      </div>
+    );
+  };
+  
 export default SignupForm;

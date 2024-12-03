@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./styles/layout.scss";
 
 const Layout = ({ children }) => {
   return (
@@ -13,20 +14,14 @@ const Layout = ({ children }) => {
             </a>
           </div>
           <ul className="nav navbar-nav navbar-right">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/feeds">Feeds</Link>
-            </li>
-            <li>
-              <a href="#">Log Out</a>
-            </li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/feeds">Feeds</Link></li>
+            <li><a href="#">Log Out</a></li>
           </ul>
         </div>
       </nav>
 
-      {/* Main container for dynamic content */}
+      {/* Main container */}
       <div className="container" style={{ marginTop: "60px" }}>
         {children}
       </div>

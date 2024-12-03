@@ -2427,3 +2427,2501 @@ Processing by Api::SessionsController#authenticated as JSON
 Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1542)
 
 
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:38:09 +0100
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1779)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 5255)
+Completed 200 OK in 35ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 7950)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:38:09 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2212)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:38:58 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1098)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4321)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4902)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:38:59 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 519)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:39:06 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 4269)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 4772)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:39:06 +0100
+Started GET "/%3C%=%20asset_pack_path%20%22media/images/background_1.jpg%22%20%%3E" for 127.0.0.1 at 2024-12-03 09:39:06 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1691)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/%3C%=%20asset_pack_path%20%22media/images/background_1.jpg%22%20%%3E"):
+  
+Started GET "/%3C%=%20asset_pack_path%20%22media/images/background_2.jpg%22%20%%3E" for 127.0.0.1 at 2024-12-03 09:39:09 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/%3C%=%20asset_pack_path%20%22media/images/background_2.jpg%22%20%%3E"):
+  
+Started GET "/%3C%=%20asset_pack_path%20%22media/images/background_3.jpg%22%20%%3E" for 127.0.0.1 at 2024-12-03 09:39:16 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/%3C%=%20asset_pack_path%20%22media/images/background_3.jpg%22%20%%3E"):
+  
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:39:38 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1079)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4299)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4842)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:39:39 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1039)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:39:41 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4784)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:39:41 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 530)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:41:05 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4772)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:41:06 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 538)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:43:02 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4769)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:43:02 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1371)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:43:29 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4268)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 4773)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:43:29 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1366)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:43:40 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 4775)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:43:40 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 934)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:43:59 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4268)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:43:59 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:44:03 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 4268)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 4770)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:44:03 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 546)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:44:09 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 4268)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 4739)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:44:09 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1366)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:44:16 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 4754)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:44:16 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 536)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:44:24 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 4766)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:44:24 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 533)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:44:28 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4268)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 4751)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:44:29 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 525)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:44:31 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4268)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 4784)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:44:31 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 528)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:47:49 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4271)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4775)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:47:49 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1405)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:58:16 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 7.9ms | Allocations: 4775)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:58:17 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSession Load (0.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 1476)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:58:46 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4754)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:58:46 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1360)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 09:58:55 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 4268)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 09:58:56 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 536)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:00:21 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1074)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 4291)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 4792)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:00:22 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 526)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:01:10 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4292)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:01:10 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1369)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:02:50 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4268)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4766)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:02:50 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 551)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:03:23 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4740)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:03:24 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 518)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:06:41 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4764)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:06:41 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 530)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:07:14 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 4754)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:07:14 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:07:57 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4268)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 4769)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:07:57 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 934)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:08:16 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4751)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:08:17 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 649)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:12:30 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 4773)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:12:30 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 512)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:12:34 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4268)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 4754)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:12:34 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 514)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:13:00 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4268)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 4764)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:13:01 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 952)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:13:05 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4268)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:13:05 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 957)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:13:27 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4268)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4778)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:13:28 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1375)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:13:58 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4754)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:13:58 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 530)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:14:01 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 4754)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:14:01 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 725)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:14:29 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4268)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:14:29 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 931)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:15:04 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4776)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:15:04 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 496)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:16:31 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4268)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 4749)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:16:31 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 512)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:17:00 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4268)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4764)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:17:00 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 518)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:17:42 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4757)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:17:42 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 521)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:17:46 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4775)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:17:46 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 530)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:17:55 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4751)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:17:55 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 514)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:23:26 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 4268)
+Completed 200 OK in 13ms (Views: 12.3ms | Allocations: 4767)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:23:26 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSession Load (0.9ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 2.5ms | Allocations: 1625)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:23:50 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4743)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:23:50 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 515)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:23:52 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4268)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:23:52 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 934)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:23:55 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4268)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:23:55 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 934)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:26:12 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4778)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:26:12 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 548)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:26:23 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:26:23 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 937)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:26:26 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 4268)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 4742)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:26:26 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 925)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:27:22 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4268)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 4754)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:27:22 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 965)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:27:23 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4268)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:27:23 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 938)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:27:25 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4268)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 4746)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:27:25 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:27:59 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4268)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 4764)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:27:59 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1366)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:28:18 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:28:18 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:32:01 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 4772)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:32:02 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 633)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:32:43 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 4775)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:32:43 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1367)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:33:23 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4779)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:33:24 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:34:08 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1074)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4291)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4790)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:34:08 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:34:15 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 4749)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:34:15 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:34:19 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:34:19 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 508)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:35:00 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4773)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:35:00 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:35:13 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4754)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:35:13 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1369)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:36:38 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1062)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4291)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 4789)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:36:39 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:36:48 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:36:48 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:37:21 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4291)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4784)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:37:21 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:37:23 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4271)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4782)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:37:24 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 542)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:37:27 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 4739)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:37:28 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 542)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:37:36 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4268)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 4757)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:37:37 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 934)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:37:39 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4749)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:37:40 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1368)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:38:34 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4291)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 4793)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:38:35 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 511)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:39:06 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4761)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:39:11 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4268)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4761)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:39:17 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:39:17 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (1.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 517)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:39:44 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4268)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4769)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:39:44 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 536)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:40:37 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4268)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4781)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:40:38 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:40:52 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4268)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:40:52 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 539)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:41:10 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4764)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:41:11 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 505)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:41:18 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:41:19 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 548)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:41:34 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4268)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 4760)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:41:34 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 529)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:43:14 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4291)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4789)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:43:15 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 521)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:45:55 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4268)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:45:55 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1357)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:49:28 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4764)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:49:28 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 675)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:49:42 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:49:42 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 517)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:49:45 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4268)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 4779)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:49:45 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1056)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:50:12 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4268)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:50:13 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 552)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:50:21 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4760)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:50:22 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 530)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:50:28 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4268)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:50:28 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 514)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:51:15 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:51:15 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 940)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:51:24 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4268)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:51:24 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 750)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:51:30 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4268)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:51:30 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 536)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:51:48 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:51:48 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:52:40 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4769)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:52:41 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1354)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:53:30 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4291)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 4802)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:53:30 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1374)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:53:49 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4752)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:53:50 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 940)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:53:58 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:55:08 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4746)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:55:08 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1359)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:55:25 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4761)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:55:26 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 529)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:55:38 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4291)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 4775)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:55:38 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 529)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:58:08 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 4748)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:58:08 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 536)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:58:52 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:58:52 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 622)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 10:59:18 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 10:59:18 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1396)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:01:01 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4749)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:01:01 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 940)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:01:15 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4778)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:01:15 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 530)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:01:17 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:01:17 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 925)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:01:49 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4773)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:01:49 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1363)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:01:55 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4268)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:01:55 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 533)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:02:04 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:02:05 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1362)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:02:08 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4268)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 4764)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:02:09 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 940)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:02:15 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4764)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:02:15 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 517)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:02:32 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4268)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 4760)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:02:32 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 533)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:02:42 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 4761)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:02:43 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1381)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:02:48 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 4772)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:02:48 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:02:51 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 4268)
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 4770)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:02:51 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 512)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:04:53 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4268)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 4773)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:04:53 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1365)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:04:56 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:04:57 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 533)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:06:33 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4268)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:06:33 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:07:10 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4268)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4763)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:07:11 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1357)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:07:13 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 4764)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:07:13 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1062)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:07:19 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4268)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 4752)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:07:19 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 535)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:07:26 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4268)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 4776)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:07:26 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1363)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:07:45 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4268)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:07:45 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1351)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:07:46 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4779)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:07:46 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1339)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:08:10 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4268)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4761)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:08:11 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 940)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:11:37 +0100
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1757)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 5265)
+Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 7948)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:11:37 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.9ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 1823)
+
+
+Started GET "/singupform" for 127.0.0.1 at 2024-12-03 11:13:06 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"singupform"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1139)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4425)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 4992)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-03 11:13:27 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1069)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4351)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 4841)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:13:28 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-03 11:13:28 +0100
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 897)
+
+
+Started GET "/cable" for 127.0.0.1 at 2024-12-03 11:13:28 +0100
+Processing by Api::TweetsController#index as JSON
+  Parameters: {"tweet"=>{}}
+  [1m[36mTweet Load (1.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:13:28 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2499)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+Completed 200 OK in 450ms (Views: 0.3ms | ActiveRecord: 4.0ms | Allocations: 18420)
+
+
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-03 11:13:28 +0100
+  Rendered layout layouts/application.html.erb (Duration: 437.9ms | Allocations: 17243)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Completed 200 OK in 442ms (Views: 441.1ms | ActiveRecord: 0.0ms | Allocations: 18280)
+
+
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-03 11:13:28 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:13:29 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1317)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-03 11:13:33 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | Allocations: 4402)
+Completed 200 OK in 45ms (Views: 40.2ms | ActiveRecord: 0.0ms | Allocations: 4916)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:13:33 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-03 11:13:33 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-03 11:13:33 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Processing by Api::TweetsController#index as JSON
+  Parameters: {"session"=>{}}
+  Parameters: {"tweet"=>{}}
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-03 11:13:33 +0100
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1610)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTweet Load (0.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 1]]
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 1.2ms | Allocations: 3185)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:13:33 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1116)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4371)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 4965)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-03 11:13:33 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:13:33 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1501)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:14:41 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4308)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4815)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:14:42 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 1422)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:14:51 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4308)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4785)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:14:51 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1367)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:17:12 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4308)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4803)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:17:13 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 749)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:18:36 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1072)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4323)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4828)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:18:36 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1777)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:18:38 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4308)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4794)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:18:38 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 548)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:19:12 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 4331)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 4824)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:19:12 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 531)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:19:21 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4308)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4798)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:19:22 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 538)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:19:32 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4308)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4806)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:19:33 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 949)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:19:38 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4308)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4809)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:19:39 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 532)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:19:43 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4308)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4794)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:19:43 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 514)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:19:47 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4308)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 4806)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:19:47 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1354)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:20:02 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4308)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4792)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:20:02 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 521)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:20:08 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4308)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 4825)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:20:08 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 943)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:20:18 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4308)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 4822)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:20:18 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:21:01 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4308)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4806)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:21:01 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 529)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:21:05 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4308)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 4788)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:21:06 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:21:20 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4308)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4812)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:21:21 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 523)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:21:56 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1071)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 4321)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 4811)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:21:57 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:22:10 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 4308)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 4804)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:22:10 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 520)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:22:27 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 4308)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 4783)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:22:28 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.7ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 514)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:22:47 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4308)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 4806)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:22:48 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1360)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:22:56 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4308)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 4788)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:22:56 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 955)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:23:00 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4308)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 4812)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:23:00 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 523)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:23:05 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4308)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4791)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:23:05 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 529)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:23:11 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4308)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 4816)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:23:11 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 517)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-03 11:23:36 +0100
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 4331)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 4824)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-03 11:23:36 +0100
+Processing by Api::SessionsController#authenticated as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "HTuOsxm-3B0gR_soJ46GcQ"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 523)
+
+

@@ -7,7 +7,6 @@ const images = require.context("../images", false, /\.(png|jpe?g|svg)$/);
 
 const Homepage = () => {
   const [backgroundIndex, setBackgroundIndex] = useState(0);
-
   const backgroundImages = [
     images("./background_1.png"),
     images("./background_2.png"),
@@ -61,6 +60,7 @@ const Homepage = () => {
       style={{
         backgroundImage: `url(${backgroundImages[backgroundIndex]})`,
         backgroundSize: "cover",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         minHeight: "100vh",
       }}
@@ -69,48 +69,85 @@ const Homepage = () => {
         <div className="container">
           <div className="navbar-header">
             <a className="navbar-brand" href="/">
-              <i className="fa fa-twitter"></i>
+              <i className="fab fa-twitter"></i>
             </a>
           </div>
+          <ul className="nav navbar-nav navbar-right">
+            <li className="dropdown">
+              <a
+                href="#"
+                className="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                language: <strong>English</strong> <span className="caret"></span>
+              </a>
+              <ul className="dropdown-menu row" role="menu">
+                <li className="col-xs-12"><a href="#">Bahasa Melayu</a></li>
+                <li className="col-xs-12"><a href="#">Dansk</a></li>
+                <li className="col-xs-12"><a href="#">English</a></li>
+                <li className="col-xs-12"><a href="#">Suomi</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </nav>
-      <div className="main">
-        <div className="container">
-          <div className="row">
-            <div className="front-card col-xs-10 col-xs-offset-1">
-              <div className="col-xs-6 welcome">
-                <div id="welcome-text">
-                  <h1><strong>Welcome to Twitter.</strong></h1>
-                  <p>Connect with your friends — and other fascinating people.</p>
+      <div className="container main-content">
+        <div className="row align-items-center">
+          <div className="col-md-6 welcome-section">
+            <h1><strong>Welcome to Twitter.</strong></h1>
+            <p>
+              Connect with your friends — and other fascinating people. Get
+              in-the-moment updates on the things that interest you. And watch
+              events unfold, in real time, from every angle.
+            </p>
+            <p>
+              <a 
+                href="https://tbka-portfolio.netlify.app/" 
+                id="twit-info" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Thomas Andersen - Fullstack Twitter Project
+              </a>
+            </p>
+          </div>
+          <div className="col-md-5 auth-section">
+            <div className="log-in">
+              <form>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="username"
+                    className="form-control username"
+                    placeholder="Username"
+                    required
+                  />
                 </div>
-              </div>
-              <div className="log-in col-xs-4 col-xs-offset-1">
-                <form onSubmit={handleLogin}>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      name="username"
-                      className="form-control username"
-                      placeholder="Username"
-                      required
-                    />
-                  </div>
-                  <div className="form-group col-xs-8">
-                    <input
-                      type="password"
-                      name="password"
-                      className="form-control password"
-                      placeholder="Password"
-                      required
-                    />
-                  </div>
-                  <button id="log-in-btn" className="btn btn-default btn-primary">
+                <div className="form-group password-row mt-3">
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-control password"
+                    placeholder="Password"
+                    required
+                  />
+                  <button id="log-in-btn" className="btn btn-primary">
                     Log in
                   </button>
-                </form>
-              </div>
-              <SignupForm />
+                </div>
+                <div className="form-group">
+                  <label className="remember-me">
+                    <input type="checkbox" />
+                    <span> Remember me</span>
+                    <span> &#183; </span>
+                  </label>
+                  <a href="#">Forgot password?</a>
+                </div>
+              </form>
             </div>
+            <SignupForm />
           </div>
         </div>
       </div>
