@@ -5,12 +5,11 @@ import "./styles/layout.scss";
 const Layout = ({ children }) => {
   return (
     <>
-      {/* Navbar */}
       <nav className="navbar navbar-default navbar-fixed-top">
         <div className="container">
           <div className="navbar-header">
             <a className="navbar-brand" href="/">
-              <i className="fa fa-twitter"></i> Twitter Clone
+              <i className="fab fa-twitter"></i>
             </a>
           </div>
           <ul className="nav navbar-nav navbar-right">
@@ -20,8 +19,6 @@ const Layout = ({ children }) => {
           </ul>
         </div>
       </nav>
-
-      {/* Main container */}
       <div className="container" style={{ marginTop: "60px" }}>
         {children}
       </div>

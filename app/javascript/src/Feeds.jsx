@@ -122,62 +122,52 @@ const Feeds = () => {
   };
 
   return (
-    <Layout navbarProps={{ showUserMenu: true, showSearchBar: true }}>
-      <div className="row">
-        <div className="col-xs-3 profile-trends">
-          <div className="profileCard col-xs-12">
-            <div className="profileCard-content">
-              <div className="user-field col-xs-12">
-                <a className="username" href="#">
-                  {currentUser}
-                </a>
-                <br />
-                <a className="screenName" href="#">
-                  @{currentUser}
-                </a>
-              </div>
-              <div className="user-stats">
-                <div className="col-xs-3">
-                  <a href="#">
-                    <span>Tweets<br /></span>
-                    <span className="user-stats-tweets">{userStats.tweets}</span>
-                  </a>
-                </div>
-                <div className="col-xs-4">
-                  <a href="#">
-                    <span>Following<br /></span>
-                    <span className="user-stats-following">{userStats.following}</span>
-                  </a>
-                </div>
-                <div className="col-xs-4">
-                  <a href="#">
-                    <span>Followers<br /></span>
-                    <span className="user-stats-followers">{userStats.followers}</span>
-                  </a>
-                </div>
-              </div>
+    <div className="feeds-container">
+      <div className="col-left">
+        <div className="profileCard">
+          <div className="user-field">
+            <a className="username" href="#">
+              {currentUser}
+            </a>
+            <br />
+            <a className="screenName" href="#">
+              @{currentUser}
+            </a>
+          </div>
+          <div className="user-stats">
+            <div>
+              <span>Tweets</span>
+              <span>{userStats.tweets}</span>
+            </div>
+            <div>
+              <span>Following</span>
+              <span>{userStats.following}</span>
+            </div>
+            <div>
+              <span>Followers</span>
+              <span>{userStats.followers}</span>
             </div>
           </div>
         </div>
-        <div className="col-xs-6 feed-box">
-          <TweetInput onPostTweet={handlePostTweet} />
-          <div className="tweets">
-            {loadingTweets ? (
-              <p>Loading tweets...</p>
-            ) : (
-              tweets.map((tweet) => (
-                <TweetCard
-                  key={tweet.id}
-                  tweet={tweet}
-                  currentUser={currentUser}
-                  onDeleteTweet={handleDeleteTweet}
-                />
-              ))
-            )}
-          </div>
+      </div>
+      <div className="col-center">
+        <TweetInput onPostTweet={handlePostTweet} />
+        <div className="tweets">
+          {loadingTweets ? (
+            <p>Loading tweets...</p>
+          ) : (
+            tweets.map((tweet) => (
+              <TweetCard
+                key={tweet.id}
+                tweet={tweet}
+                currentUser={currentUser}
+                onDeleteTweet={handleDeleteTweet}
+              />
+            ))
+          )}
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 
