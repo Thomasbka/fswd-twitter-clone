@@ -9,9 +9,16 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Layout>
-          <Route path="/feeds" component={Feeds} />
-        </Layout>
+        <Route
+          path="/"
+          render={() => (
+            <Layout>
+              <Switch>
+                <Route path="/feeds" component={Feeds} />
+              </Switch>
+            </Layout>
+          )}
+        />
       </Switch>
     </Router>
   );

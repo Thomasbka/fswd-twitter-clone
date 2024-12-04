@@ -32,11 +32,16 @@ export function authenticityHeader(options = {}) {
 */
 export function safeCredentials(options = {}) {
   return Object.assign(options, {
-    credentials: 'include',
-    mode: 'same-origin',
-    headers: Object.assign((options.headers || {}), authenticityHeader(), jsonHeader()),
+    credentials: "include",
+    mode: "same-origin",
+    headers: Object.assign(options.headers || {}, {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "X-CSRF-Token": getAuthenticityToken(),
+    }),
   });
 }
+
 
 export function handleErrors(response) {
   if (!response.ok) {

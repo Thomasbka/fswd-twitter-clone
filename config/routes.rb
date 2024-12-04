@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :feeds, only: [:index]
     resources :tweets, only: [:index, :create, :destroy]
-    resources :users, only: [:create, :show]
+    resources :users, param: :username, only: [:show, :create]
     resources :sessions, only: [:create, :destroy] do
       collection do
         get :authenticated

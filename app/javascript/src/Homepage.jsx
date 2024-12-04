@@ -26,33 +26,48 @@ const Homepage = () => {
   const authenticateUser = async () => {
     try {
       const response = await fetch("/api/sessions/authenticated", safeCredentials());
-      const data = await handleErrors(response);
-
+      const data = await response.json();
+  
       if (data.authenticated) {
         window.location.replace("/feeds");
+      } else {
+        console.log("User not authenticated:", data);
       }
     } catch (error) {
       console.error("Authentication error:", error);
     }
   };
+  
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log("handleLogin triggered");
+  
     const username = e.target.username.value;
     const password = e.target.password.value;
-
+  
+    console.log("Attempting login with:", { username, password });
+  
     try {
-      await fetch("/api/sessions", {
+      const response = await fetch("/api/sessions", {
         method: "POST",
         body: JSON.stringify({ user: { username, password } }),
         ...safeCredentials(),
       });
-
+  
+      console.log("Response Status:", response.status);
+      console.log("Response Headers:", response.headers);
+  
+      const data = await handleErrors(response);
+      console.log("Login response data:", data);
+  
       authenticateUser();
     } catch (error) {
       console.error("Login error:", error);
     }
   };
+  
+  
 
   return (
     <div
@@ -115,7 +130,7 @@ const Homepage = () => {
           </div>
           <div className="col-md-5 auth-section">
             <div className="log-in">
-              <form>
+              <form onSubmit={handleLogin}>
                 <div className="form-group">
                   <input
                     type="text"

@@ -9,5 +9,6 @@ class Session < ApplicationRecord
 
   def generate_session_token
     self.token = SecureRandom.urlsafe_base64
-  end
+    Rails.logger.debug "Generated token: #{self.token}"
+  end  
 end
