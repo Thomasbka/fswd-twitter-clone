@@ -6,6 +6,7 @@ module Api
     end
 
     def create
+      puts "Params received: #{params.inspect}"
       token = cookies.signed[:twitter_session_token]
       session = Session.find_by(token: token)
       user = session&.user
@@ -18,7 +19,7 @@ module Api
 
       @tweet = user.tweets.new(tweet_params)
       if @tweet.save
-        TweetMailer.notify(@tweet).deliver!
+        # TweetMailer.notify(@tweet).deliver!
         render json: @tweet, status: :created
       else
         render json: { error: @tweet.errors.full_messages }, status: :unprocessable_entity

@@ -36,7 +36,6 @@ export function safeCredentials(options = {}) {
     mode: "same-origin",
     headers: Object.assign(options.headers || {}, {
       Accept: "application/json",
-      "Content-Type": "application/json",
       "X-CSRF-Token": getAuthenticityToken(),
     }),
   });
