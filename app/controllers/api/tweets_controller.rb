@@ -2,8 +2,10 @@ module Api
   class TweetsController < ApplicationController
     def index
       @tweets = Tweet.includes(:user).order(created_at: :desc)
+      logger.debug "Fetched Tweets: #{@tweets.as_json(include: { user: { only: [:username, :id] } })}"
       render json: @tweets.as_json(include: { user: { only: [:username, :id] } })
     end
+    
 
     def create
       puts "Params received: #{params.inspect}"

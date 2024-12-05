@@ -12793,3 +12793,1024 @@ Started GET "/cable" for 127.0.0.1 at 2024-12-05 11:54:12 +0100
 Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 11:54:12 +0100
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 TweetsChannel is transmitting the subscription confirmation
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 11:58:07 +0100
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1798)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 5342)
+Completed 200 OK in 29ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 8026)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 11:58:08 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 11:58:08 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 11:58:08 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Processing by Api::TweetsController#index as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 30859)
+
+
+Completed 200 OK in 84ms (Views: 1.0ms | ActiveRecord: 2.3ms | Allocations: 28985)
+
+
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 11:58:08 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 11:58:08 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+TweetsChannel is transmitting the subscription confirmation
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 31ms (Views: 1.6ms | ActiveRecord: 1.0ms | Allocations: 9989)
+
+
+Started POST "/api/tweets" for 127.0.0.1 at 2024-12-05 11:58:11 +0100
+Processing by Api::TweetsController#create as JSON
+  Parameters: {"tweet"=>{"message"=>"test"}}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ? AND (created_at > '2024-12-05 09:58:11.504500')[0m  [["user_id", 3]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("message", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["message", "test"], ["user_id", 3], ["created_at", "2024-12-05 10:58:11.506216"], ["updated_at", "2024-12-05 10:58:11.506216"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+[ActionCable] Broadcasting to tweets_channel: {:id=>14, :message=>"test", :user=>{:id=>3, :username=>"testuser"}, :created_at=>"2024-12-05 10:58:11"}
+Completed 201 Created in 14ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 3925)
+
+
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 11:58:11 +0100
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 11:58:11 +0100
+Processing by Api::TweetsController#index as JSON
+Processing by Api::UsersController#show as JSON
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 2896)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.9ms | Allocations: 4121)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 11:59:50 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1124)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 4415)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 4926)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 11:59:50 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 11:59:50 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 11:59:50 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 11:59:50 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Processing by Api::TweetsController#index as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 11:59:50 +0100
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 3308)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 4216)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 11:59:50 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 2119)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 11:59:56 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4356)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 4837)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 11:59:56 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 11:59:56 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 11:59:56 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 11:59:56 +0100
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 11:59:56 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by Api::TweetsController#index as JSON
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 2457)
+
+
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+TweetsChannel is transmitting the subscription confirmation
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 2703)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 11:59:57 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 2115)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:01:36 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4355)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4865)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:01:36 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:01:36 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:01:36 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:01:36 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Processing by Api::TweetsController#index as JSON
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:01:36 +0100
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 2457)
+
+
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 4039)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:01:36 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 2118)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:01:43 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4356)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 4858)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:01:43 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:01:43 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:01:43 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:01:43 +0100
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:01:43 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Processing by Api::TweetsController#index as JSON
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+TweetsChannel is transmitting the subscription confirmation
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 2712)
+
+
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 4031)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:01:43 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 2121)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:05:03 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4355)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 4832)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:05:03 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:05:04 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:05:04 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:05:04 +0100
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:05:04 +0100
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Processing by Api::TweetsController#index as JSON
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 3188)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 3128)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:05:04 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 2103)
+
+
+Unsubscribing from channel: {"channel":"TweetsChannel"}
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:05:32 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4355)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4853)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:05:32 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:05:33 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:05:33 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:05:33 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:05:33 +0100
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Processing by Api::TweetsController#index as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+TweetsChannel is transmitting the subscription confirmation
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 2836)
+
+
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 3976)
+
+
+Unsubscribing from channel: {"channel":"TweetsChannel"}
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:05:33 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 2121)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:07:01 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4355)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4865)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:07:01 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:07:02 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:07:02 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:07:02 +0100
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:07:02 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Processing by Api::TweetsController#index as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+TweetsChannel is transmitting the subscription confirmation
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 3304)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 4499)
+
+
+Unsubscribing from channel: {"channel":"TweetsChannel"}
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:07:02 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 2103)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:07:26 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4369)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4864)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:07:26 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:07:27 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:07:27 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:07:27 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:07:27 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Processing by Api::TweetsController#index as JSON
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+TweetsChannel is transmitting the subscription confirmation
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 14.1ms | ActiveRecord: 0.6ms | Allocations: 2713)
+
+
+Completed 200 OK in 42ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 4219)
+
+
+Unsubscribing from channel: {"channel":"TweetsChannel"}
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:07:27 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 2109)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:07:31 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4355)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 4848)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:07:31 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:07:31 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:07:31 +0100
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1496)
+
+
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:07:31 +0100
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:07:31 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Processing by Api::TweetsController#index as JSON
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 2665)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:07:31 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 2124)
+
+
+Unsubscribing from channel: {"channel":"TweetsChannel"}
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:07:52 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4356)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 4871)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:07:52 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:07:52 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:07:52 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:07:52 +0100
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:07:52 +0100
+Processing by Api::TweetsController#index as JSON
+Processing by Api::SessionsController#authenticated as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+TweetsChannel is transmitting the subscription confirmation
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 3106)
+
+
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 3624)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:07:52 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 2118)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:11:39 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4355)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4838)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:11:39 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:11:39 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:11:39 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:11:39 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:11:39 +0100
+Processing by Api::TweetsController#index as JSON
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 3630)
+
+
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 5957)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:11:39 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 2134)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:11:48 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4355)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 4853)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:11:48 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:11:48 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:11:48 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:11:48 +0100
+Processing by Api::TweetsController#index as JSON
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:11:48 +0100
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2714)
+
+
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 3506)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:11:48 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 1.2ms | Allocations: 2130)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:12:44 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4355)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4848)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:12:44 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:12:44 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:12:44 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:12:44 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:12:44 +0100
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Processing by Api::TweetsController#index as JSON
+TweetsChannel is transmitting the subscription confirmation
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 4422)
+
+
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 3306)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:12:44 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 2121)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:14:32 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1204)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4507)
+Completed 200 OK in 8ms (Views: 7.5ms | Allocations: 5403)
+
+
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:14:32 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:14:32 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:14:32 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Processing by Api::TweetsController#index as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:14:32 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+TweetsChannel is transmitting the subscription confirmation
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>11, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:43:58.025Z", "updated_at"=>"2024-12-05T10:43:58.025Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+Completed 200 OK in 42ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 20650)
+
+
+Completed 200 OK in 43ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 21155)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:14:32 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 9ms (Views: 1.6ms | ActiveRecord: 0.8ms | Allocations: 5515)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:15:11 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1114)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4404)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4963)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:15:11 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:15:11 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:15:11 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:15:11 +0100
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+Processing by Api::TweetsController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:15:11 +0100
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 3567)
+
+
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>11, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:43:58.025Z", "updated_at"=>"2024-12-05T10:43:58.025Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+Completed 200 OK in 14ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 3862)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:15:11 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 2175)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:15:26 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4355)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4857)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:15:26 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:15:26 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:15:26 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:15:26 +0100
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Processing by Api::TweetsController#index as JSON
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:15:26 +0100
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 2510)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>11, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:43:58.025Z", "updated_at"=>"2024-12-05T10:43:58.025Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 3927)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:15:26 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+TweetsChannel is transmitting the subscription confirmation
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 1.0ms | Allocations: 2192)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:16:52 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4355)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 4851)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:16:52 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:16:53 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:16:53 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:16:53 +0100
+Processing by Api::TweetsController#index as JSON
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:16:53 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>11, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:43:58.025Z", "updated_at"=>"2024-12-05T10:43:58.025Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 3148)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Completed 200 OK in 22ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 3568)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:16:53 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 2115)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:18:40 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1366)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4869)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 6036)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:18:41 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:18:41 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:18:41 +0100
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:18:41 +0100
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+Processing by Api::TweetsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:18:41 +0100
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 2980)
+
+
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>11, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:43:58.025Z", "updated_at"=>"2024-12-05T10:43:58.025Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 3886)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:18:41 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 1.0ms | Allocations: 2166)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:18:57 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4355)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4867)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:18:57 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:18:58 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:18:58 +0100
+Processing by Api::TweetsController#index as JSON
+  [1m[36mTweet Load (0.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Processing by Api::SessionsController#authenticated as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>11, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:43:58.025Z", "updated_at"=>"2024-12-05T10:43:58.025Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 3925)
+
+
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:18:58 +0100
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 2304)
+
+
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:18:58 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:18:58 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 2115)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:19:18 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4355)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4845)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:19:18 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:19:19 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:19:19 +0100
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:19:19 +0100
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2242)
+
+
+Processing by Api::TweetsController#index as JSON
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:19:19 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>11, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:43:58.025Z", "updated_at"=>"2024-12-05T10:43:58.025Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 3506)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:19:19 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 2100)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:19:21 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4355)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4872)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:19:21 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:19:21 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:19:21 +0100
+Processing by Api::SessionsController#authenticated as JSON
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:19:21 +0100
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Processing by Api::TweetsController#index as JSON
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:19:21 +0100
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2695)
+
+
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>11, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:43:58.025Z", "updated_at"=>"2024-12-05T10:43:58.025Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+TweetsChannel is transmitting the subscription confirmation
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 3930)
+
+
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:19:21 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 2136)
+
+
+Started GET "/feeds" for 127.0.0.1 at 2024-12-05 12:19:25 +0100
+Processing by HomepageController#index as HTML
+  Parameters: {"path"=>"feeds"}
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4355)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4881)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:19:25 +0100
+Started GET "/api/sessions/authenticated" for 127.0.0.1 at 2024-12-05 12:19:26 +0100
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:19:26 +0100
+Started GET "/cable" for 127.0.0.1 at 2024-12-05 12:19:26 +0100
+Processing by Api::TweetsController#index as JSON
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+Processing by Api::SessionsController#authenticated as JSON
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>11, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:43:58.025Z", "updated_at"=>"2024-12-05T10:43:58.025Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+Token from cookie: "GPyYNB_6lxC3WYFwH64__Q"
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2024-12-05 12:19:26 +0100
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 3187)
+
+
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Session found: #<Session id: 7, token: "GPyYNB_6lxC3WYFwH64__Q", user_id: 3, created_at: "2024-12-05 09:36:55.269033000 +0000", updated_at: "2024-12-05 09:36:55.269033000 +0000">
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 2729)
+
+
+TweetsChannel is transmitting the subscription confirmation
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:19:26 +0100
+Processing by Api::UsersController#show as JSON
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 2112)
+
+
+Started DELETE "/api/tweets/11" for 127.0.0.1 at 2024-12-05 12:19:35 +0100
+Processing by Api::TweetsController#destroy as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."token" = ? LIMIT ?[0m  [["token", "GPyYNB_6lxC3WYFwH64__Q"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ? AND "tweets"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Tweet"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mTweet Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tweets" WHERE "tweets"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 44ms (Views: 0.1ms | ActiveRecord: 2.8ms | Allocations: 4790)
+
+
+Started GET "/api/tweets" for 127.0.0.1 at 2024-12-05 12:19:35 +0100
+Started GET "/api/users/testuser" for 127.0.0.1 at 2024-12-05 12:19:35 +0100
+Processing by Api::TweetsController#index as JSON
+Processing by Api::UsersController#show as JSON
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."created_at" DESC[0m
+  Parameters: {"username"=>"testuser"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 3], ["id", 2], ["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+Fetched Tweets: [{"id"=>14, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:58:11.506Z", "updated_at"=>"2024-12-05T10:58:11.506Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>13, "message"=>"hello", "user_id"=>3, "created_at"=>"2024-12-05T10:54:08.125Z", "updated_at"=>"2024-12-05T10:54:08.125Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>12, "message"=>"test", "user_id"=>3, "created_at"=>"2024-12-05T10:54:00.232Z", "updated_at"=>"2024-12-05T10:54:00.232Z", "user"=>{"id"=>3, "username"=>"testuser"}}, {"id"=>10, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:51.512Z", "updated_at"=>"2024-09-03T11:16:51.512Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>9, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:50.282Z", "updated_at"=>"2024-09-03T11:16:50.282Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>8, "message"=>"Test", "user_id"=>2, "created_at"=>"2024-09-03T11:16:22.698Z", "updated_at"=>"2024-09-03T11:16:22.698Z", "user"=>{"id"=>2, "username"=>"Thomas"}}, {"id"=>1, "message"=>"Image upload", "user_id"=>1, "created_at"=>"2024-07-28T08:32:16.140Z", "updated_at"=>"2024-07-28T08:32:16.170Z", "user"=>{"id"=>1, "username"=>"Test"}}]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followed_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 3]]
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 3488)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followed_id" = ?[0m  [["followed_id", 3]]
+  [1m[36mTweet Load (0.1ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 4076)
+
+

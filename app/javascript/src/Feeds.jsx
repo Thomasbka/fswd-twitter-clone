@@ -66,13 +66,21 @@ const Feeds = () => {
     try {
       const response = await fetch("/api/tweets", safeCredentials());
       const data = await handleErrors(response);
-      setTweets(data);
+      console.log("API Response:", data);
+      const transformedTweets = data.map((tweet) => ({
+        ...tweet,
+        username: tweet.user?.username || "Unknown",
+      }));
+  
+      setTweets(transformedTweets);
     } catch (error) {
       console.error("Error fetching tweets:", error);
     } finally {
       setLoadingTweets(false);
     }
   };
+  
+  
 
   const fetchUserStats = async (username) => {
     try {
@@ -92,10 +100,6 @@ const Feeds = () => {
     const formData = new FormData();
     if (message) formData.append("tweet[message]", message);
     if (image) formData.append("tweet[image]", image);
-
-    for (let [key, value] of formData.entries()) {
-      console.log(`${key}:`, value);
-    }
   
     try {
       const response = await fetch("/api/tweets", {
