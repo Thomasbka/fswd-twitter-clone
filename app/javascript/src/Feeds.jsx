@@ -122,49 +122,86 @@ const Feeds = () => {
   };
 
   return (
-    <div className="feeds-container">
-      <div className="col-left">
-        <div className="profileCard">
-          <div className="user-field">
-            <a className="username" href="#">
-              {currentUser}
-            </a>
-            <br />
-            <a className="screenName" href="#">
-              @{currentUser}
+    <div>
+      <nav className="navbar navbar-default navbar-fixed-top">
+        <div className="container">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="/">
+              <i className="fab fa-twitter"></i>
             </a>
           </div>
-          <div className="user-stats">
-            <div>
-              <span>Tweets</span>
-              <span>{userStats.tweets}</span>
-            </div>
-            <div>
-              <span>Following</span>
-              <span>{userStats.following}</span>
-            </div>
-            <div>
-              <span>Followers</span>
-              <span>{userStats.followers}</span>
+          <ul className="nav navbar-nav navbar-right">
+            <li className="dropdown">
+              <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span id="user-icon">User</span></a>
+              <ul className="dropdown-menu row" role="menu">
+                <li ><a href="#" className="username">User</a></li>
+                <li role="presentation" className="divider"></li>
+                <li ><a href="#">Lists</a></li>
+                <li role="presentation" className="divider"></li>
+                <li ><a href="#">Help</a></li>
+                <li ><a href="#">Keyboard shortcuts</a></li>
+                <li role="presentation" className="divider"></li>
+                <li ><a href="#">Settings</a></li>
+                <li ><a id="log-out" href="#">Log out</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div className="search-bar col-xs-3 nav navbar-right">
+            <div className="input-group">
+              <input type="text" className="form-control search-input" placeholder="Search for..."/>
+              <span className="input-group-btn">
+                <button className="btn btn-default search-btn" type="button">Go!</button>
+              </span>
             </div>
           </div>
         </div>
-      </div>
-      <div className="col-center">
-        <TweetInput onPostTweet={handlePostTweet} />
-        <div className="tweets">
-          {loadingTweets ? (
-            <p>Loading tweets...</p>
-          ) : (
-            tweets.map((tweet) => (
-              <TweetCard
-                key={tweet.id}
-                tweet={tweet}
-                currentUser={currentUser}
-                onDeleteTweet={handleDeleteTweet}
-              />
-            ))
-          )}
+      </nav>
+    <div>
+    </div>
+      <div className="feeds-container">
+        <div className="col-left">
+          <div className="profileCard">
+            <div className="user-field">
+              <a className="username" href="#">
+                {currentUser}
+              </a>
+              <br />
+              <a className="screenName" href="#">
+                @{currentUser}
+              </a>
+            </div>
+            <div className="user-stats">
+              <div>
+                <p>Tweets</p>
+                <span>{userStats.tweets}</span>
+              </div>
+              <div>
+                <p>Following</p>
+                <span>{userStats.following}</span>
+              </div>
+              <div>
+                <p>Followers</p>
+                <span>{userStats.followers}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-center">
+          <TweetInput onPostTweet={handlePostTweet} />
+          <div className="tweets">
+            {loadingTweets ? (
+              <p>Loading tweets...</p>
+            ) : (
+              tweets.map((tweet) => (
+                <TweetCard
+                  key={tweet.id}
+                  tweet={tweet}
+                  currentUser={currentUser}
+                  onDeleteTweet={handleDeleteTweet}
+                />
+              ))
+            )}
+          </div>
         </div>
       </div>
     </div>

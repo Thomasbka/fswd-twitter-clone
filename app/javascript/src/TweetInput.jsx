@@ -34,7 +34,7 @@ const TweetInput = ({ onPostTweet }) => {
           onChange={handleInputChange}
         />
         <div className="tweet-actions">
-          <label htmlFor="image-select" className="upload-image-text">
+          <label htmlFor="image-select" className="upload-image-text mx-2">
             Upload image
           </label>
           <input
