@@ -31,6 +31,19 @@ module Api
       end
     end
 
+    def tweets
+      user = User.find_by(username: params[:username])
+      return render json: { error: "User not found" }, status: :not_found unless user
+    
+      tweets = user.tweets.order(created_at: :desc).includes(image_attachment: :blob)
+    
+      render json: tweets.as_json(
+        include: { user: { only: [:username] } },
+        methods: [:image_url]
+      )
+    end
+    
+
     private
 
     def user_params

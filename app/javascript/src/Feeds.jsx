@@ -81,7 +81,6 @@ const Feeds = () => {
   };
   
   
-
   const fetchUserStats = async (username) => {
     try {
       const response = await fetch(`/api/users/${username}`, safeCredentials());
@@ -141,17 +140,21 @@ const Feeds = () => {
           </div>
           <ul className="nav navbar-nav navbar-right">
             <li className="dropdown">
-              <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span id="user-icon">User</span></a>
-              <ul className="dropdown-menu row" role="menu">
-                <li ><a href="#" className="username">User</a></li>
-                <li role="presentation" className="divider"></li>
-                <li ><a href="#">Lists</a></li>
-                <li role="presentation" className="divider"></li>
-                <li ><a href="#">Help</a></li>
-                <li ><a href="#">Keyboard shortcuts</a></li>
-                <li role="presentation" className="divider"></li>
-                <li ><a href="#">Settings</a></li>
-                <li ><a id="log-out" href="#">Log out</a></li>
+              <a
+                href="#"
+                className="dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span id="user-icon">User</span>
+              </a>
+              <ul className="dropdown-menu">
+                <li><a className="dropdown-item" href="/my-tweets">My Tweets</a></li>
+                <li><a className="dropdown-item username" href="#">User</a></li>
+                <li><hr className="dropdown-divider" /></li>
+                <li><a className="dropdown-item" href="#">Settings</a></li>
+                <li><a className="dropdown-item" id="log-out" href="#">Log out</a></li>
               </ul>
             </li>
           </ul>

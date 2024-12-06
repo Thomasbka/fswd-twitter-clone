@@ -16,4 +16,8 @@ class Tweet < ApplicationRecord
       created_at: self.created_at.strftime("%Y-%m-%d %H:%M:%S")
     })
   end
+
+  def image_url
+    image.attached? ? Rails.application.routes.url_helpers.url_for(image) : nil
+  end
 end
