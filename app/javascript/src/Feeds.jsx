@@ -128,6 +128,21 @@ const Feeds = () => {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("/api/sessions", {
+        method: "DELETE",
+        ...safeCredentials(),
+      });
+      await handleErrors(response);
+      console.log("User successfully logged out.");
+      window.location.replace("/");
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+  
+
   return (
     <div>
       <nav className="navbar navbar-default navbar-fixed-top">
@@ -151,7 +166,19 @@ const Feeds = () => {
               <ul className="dropdown-menu dropdown-menu-end">
                 <li><a className="dropdown-item" href={`/users/${currentUser}/tweets`}>Profile</a></li>
                 <li><hr className="dropdown-divider" /></li>
-                <li><a className="dropdown-item" id="log-out" href="#">Log out</a></li>
+                <li>
+                  <a 
+                    className="dropdown-item" 
+                    id="log-out" 
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLogout();
+                    }}
+                    >
+                      Log out
+                    </a>
+                </li>
               </ul>
             </li>
           </ul>

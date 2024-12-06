@@ -36,10 +36,12 @@ export function safeCredentials(options = {}) {
     mode: "same-origin",
     headers: Object.assign(options.headers || {}, {
       Accept: "application/json",
-      "X-CSRF-Token": getAuthenticityToken(),
+      "Content-Type": "application/json",
+      "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
     }),
   });
 }
+
 
 
 export function handleErrors(response) {

@@ -2,28 +2,30 @@ module Api
   class SessionsController < ApplicationController
     def create
       Rails.logger.debug "SessionsController#create called"
-      @user = User.find_by(username: params[:user][:username])
+      Rails.logger.debug "Params: #{params.inspect}"
+    
+      @user = User.find_by(username: params.dig(:user, :username))
       Rails.logger.debug "User found: #{@user.inspect}"
     
-      if @user&.authenticate(params[:user][:password])
+      if @user&.authenticate(params.dig(:user, :password))
         session = @user.sessions.create
         Rails.logger.debug "Session created: #{session.inspect}"
     
         cookies.permanent.signed[:twitter_session_token] = {
           value: session.token,
           httponly: true,
-          secure: false
+          secure: Rails.env.production?,
+          same_site: :lax
         }
-        puts cookies.signed[:twitter_session_token]
         Rails.logger.debug "Cookie set with token: #{session.token}"
     
-        render json: { success: true, user: @user }
+        render json: { success: true, user: @user, redirect_url: "/feeds" }
       else
-        Rails.logger.debug "Login failed for username: #{params[:user][:username]}"
-        render json: { success: false, error: 'Invalid username or password' }, status: :unauthorized
+        Rails.logger.debug "Login failed for username: #{params.dig(:user, :username)}"
+        render json: { success: false, error: "Invalid username or password" }, status: :unauthorized
       end
     end
-        
+    
     
 
     def authenticated
@@ -46,17 +48,17 @@ module Api
       end
     end
     
-    
 
     def destroy
       token = cookies.signed[:twitter_session_token]
       session = Session.find_by(token: token)
-
-      if session&.destroy
+  
+      if session
+        session.destroy
         cookies.delete(:twitter_session_token)
         render json: { success: true }
       else
-        render json: { success: false }, status: :unprocessable_entity
+        render json: { error: 'No active session' }, status: :unprocessable_entity
       end
     end
   end

@@ -25,48 +25,55 @@ const Homepage = () => {
 
   const authenticateUser = async () => {
     try {
-      const response = await fetch("/api/sessions/authenticated", safeCredentials());
+      const response = await fetch("/api/sessions/authenticated", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+        },
+        credentials: "include",
+      });
       const data = await response.json();
-  
-      if (data.authenticated) {
-        window.location.replace("/feeds");
-      } else {
-        console.log("User not authenticated:", data);
-      }
+      console.log("Authentication response:", data);
+      return data;
     } catch (error) {
       console.error("Authentication error:", error);
+      return { authenticated: false };
     }
   };
+  
   
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("handleLogin triggered");
-  
     const username = e.target.username.value;
     const password = e.target.password.value;
-  
-    console.log("Attempting login with:", { username, password });
   
     try {
       const response = await fetch("/api/sessions", {
         method: "POST",
-        body: JSON.stringify({ user: { username, password } }),
         ...safeCredentials(),
+        body: JSON.stringify({
+          user: {
+            username: username,
+            password: password,
+          },
+        }),
       });
   
-      console.log("Response Status:", response.status);
-      console.log("Response Headers:", response.headers);
-  
-      const data = await handleErrors(response);
-      console.log("Login response data:", data);
-  
-      authenticateUser();
+      const data = await response.json();
+      console.log("Login response:", data);
+
+      if (data.success) {
+        window.location.replace(data.redirect_url);
+      } else {
+        console.error("Login failed:", data.error);
+        alert(data.error || "Login failed. Please try again.");
+      }
     } catch (error) {
       console.error("Login error:", error);
+      alert("An error occurred during login. Please try again.")
     }
   };
-  
   
 
   return (

@@ -9,9 +9,10 @@ Rails.application.routes.draw do
         get :tweets
       end
     end
-    resources :sessions, only: [:create, :destroy] do
+    resources :sessions, only: [:create] do
       collection do
         get :authenticated
+        delete :destroy
       end
     end
   end
