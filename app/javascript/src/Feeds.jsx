@@ -190,11 +190,11 @@ const Feeds = () => {
         <div className="col-left">
           <div className="profileCard">
             <div className="user-field">
-              <a className="username" href="#">
+              <a className="username" href={`/users/${currentUser}/tweets`}>
                 {currentUser}
               </a>
               <br />
-              <a className="screenName" href="#">
+              <a className="screenName" href={`/users/${currentUser}/tweets`}>
                 @{currentUser}
               </a>
             </div>

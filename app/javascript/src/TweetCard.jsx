@@ -17,8 +17,8 @@ const TweetCard = ({ tweet, currentUser, onDeleteTweet }) => {
         </button>
       )}
       <div className="tweet-header">
-        <span className="tweet-username">{username}</span>{" "}
-        <span className="tweet-screenName">@{screenName}</span>
+        <a className="tweet-username" href={`/users/${username}/tweets`}>{username}</a>{" "}
+        <a className="tweet-screenName" href={`/users/${username}/tweets`}>@{screenName}</a>
       </div>
       <p>{tweet.message}</p>
       {tweet.image && <img src={tweet.image} alt="Attached" />}
