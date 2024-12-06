@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import TweetCard from "./TweetCard";
 import TweetInput from "./TweetInput";
 import { safeCredentials, safeCredentialsFormData, handleErrors } from "./utils/fetchHelper";
 import "./styles/feeds.scss";
 
 const UserTweets = () => {
+  const { username } = useParams();
   const [tweets, setTweets] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [userStats, setUserStats] = useState({ tweets: 0, following: 0, followers: 0 });
@@ -15,11 +17,11 @@ const UserTweets = () => {
   }, []);
 
   useEffect(() => {
-    if (currentUser) {
-      fetchUserTweets(currentUser);
-      fetchUserStats(currentUser);
+    if (username) {
+      fetchUserTweets(username);
+      fetchUserStats(username);
     }
-  }, [currentUser]);
+  }, [username]);
 
   const authenticateUser = async () => {
     try {
@@ -70,6 +72,8 @@ const UserTweets = () => {
   };
 
   const handlePostTweet = async (message, image) => {
+    if (username !== currentUser) return;
+
     const formData = new FormData();
     if (message) formData.append("tweet[message]", message);
     if (image) formData.append("tweet[image]", image);
@@ -81,22 +85,24 @@ const UserTweets = () => {
         ...safeCredentialsFormData(),
       });
       await handleErrors(response);
-      fetchUserTweets(currentUser); // Refresh user tweets
-      fetchUserStats(currentUser); // Refresh user stats
+      fetchUserTweets(currentUser);
+      fetchUserStats(currentUser);
     } catch (error) {
       console.error("Error posting tweet:", error);
     }
   };
 
   const handleDeleteTweet = async (id) => {
+    if (username !== currentUser) return;
+
     try {
       const response = await fetch(`/api/tweets/${id}`, {
         method: "DELETE",
         ...safeCredentials(),
       });
       await handleErrors(response);
-      fetchUserTweets(currentUser); // Refresh user tweets
-      fetchUserStats(currentUser); // Refresh user stats
+      fetchUserTweets(username);
+      fetchUserStats(username);
     } catch (error) {
       console.error("Error deleting tweet:", error);
     }
@@ -137,6 +143,7 @@ const UserTweets = () => {
                 <span id="user-icon" className="text-dark">{currentUser || "User"}</span>
               </a>
               <ul className="dropdown-menu dropdown-menu-end">
+                <li><a className="dropdown-item" href={`/users/${currentUser}/tweets`}>Profile</a></li>
                 <li><a className="dropdown-item" href="/feeds">Feed</a></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li>
@@ -161,12 +168,12 @@ const UserTweets = () => {
         <div className="col-left">
           <div className="profileCard">
             <div className="user-field">
-              <a className="username" href={`/users/${currentUser}/tweets`}>
-                {currentUser}
+              <a className="username" href={`/users/${username}/tweets`}>
+                {username}
               </a>
               <br />
-              <a className="screenName" href={`/users/${currentUser}/tweets`}>
-                @{currentUser}
+              <a className="screenName" href={`/users/${username}/tweets`}>
+                @{username}
               </a>
             </div>
             <div className="user-stats">
@@ -186,7 +193,7 @@ const UserTweets = () => {
           </div>
         </div>
         <div className="col-center">
-          <TweetInput onPostTweet={handlePostTweet} />
+          {username === currentUser && <TweetInput onPostTweet={handlePostTweet} />}
           <div className="tweets">
             {loadingTweets ? (
               <p>Loading tweets...</p>
