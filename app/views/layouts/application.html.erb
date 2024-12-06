@@ -4,13 +4,17 @@
     <title>Twitter Clone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= javascript_pack_tag 'application', defer: true %> <!-- React entry point -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   </head>
   <body>
-    <div id="root"></div> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <div id="root"></div>
+    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload', defer: true %>
+    <script>
+      const imagePaths = {
+        background1: "<%= image_pack_tag('media/images/background_1.png').match(/src="([^"]*)"/)[1] %>",
+        background2: "<%= image_pack_tag('media/images/background_2.png').match(/src="([^"]*)"/)[1] %>",
+        background3: "<%= image_pack_tag('media/images/background_3.jpg').match(/src="([^"]*)"/)[1] %>",
+      };
+    </script>
   </body>
 </html>

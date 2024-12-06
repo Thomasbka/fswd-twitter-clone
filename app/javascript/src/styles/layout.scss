@@ -1,0 +1,24 @@
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .navbar-header {
+    float: left;
+
+    .navbar-brand {
+      color: #1da1f2;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .navbar-right {
+    float: right;
+
+    li a {
+      color: #333;
+      font-size: 1rem;
+      margin-left: 10px;
+    }
+  }
+}

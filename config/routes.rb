@@ -1,21 +1,21 @@
 Rails.application.routes.draw do
   root 'homepage#index'
-  get '/feeds' => 'feeds#index'
 
-  # USERS
-  post '/users'                  => 'users#create'
+  namespace :api do
+    resources :feeds, only: [:index]
+    resources :tweets, only: [:index, :create, :destroy]
+    resources :users, param: :username, only: [:show, :create] do
+      member do
+        get :tweets
+      end
+    end
+    resources :sessions, only: [:create] do
+      collection do
+        get :authenticated
+        delete :destroy
+      end
+    end
+  end
 
-  # SESSIONS
-  post '/sessions'               => 'sessions#create'
-  get  '/authenticated'          => 'sessions#authenticated'
-  delete '/sessions'             => 'sessions#destroy'
-
-  # TWEETS
-  post '/tweets'                 => 'tweets#create'
-  get  '/tweets'                 => 'tweets#index'
-  delete '/tweets/:id'           => 'tweets#destroy'
-  get '/users/:username/tweets' => 'tweets#index_by_user'
-
-  # Redirect all other paths to index page, which will be taken over by AngularJS
-  # get '*path'    => 'homepage#index'
+  get '*path', to: 'homepage#index', constraints: ->(req) { !req.xhr? && req.format.html? }
 end

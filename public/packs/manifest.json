@@ -1,24 +1,26 @@
 {
-  "application.js": "/packs/js/application-e5a91cb928d35a73d701.js",
-  "application.js.map": "/packs/js/application-e5a91cb928d35a73d701.js.map",
+  "application.js": "/packs/js/application-ef4400322c2e91b0fa13.js",
+  "application.js.map": "/packs/js/application-ef4400322c2e91b0fa13.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-e5a91cb928d35a73d701.js"
+        "/packs/js/application-ef4400322c2e91b0fa13.js"
       ],
       "js.map": [
-        "/packs/js/application-e5a91cb928d35a73d701.js.map"
-      ]
-    },
-    "hello_react": {
-      "js": [
-        "/packs/js/hello_react-b93cf38dbe2d861dad0e.js"
-      ],
-      "js.map": [
-        "/packs/js/hello_react-b93cf38dbe2d861dad0e.js.map"
+        "/packs/js/application-ef4400322c2e91b0fa13.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/js/hello_react-b93cf38dbe2d861dad0e.js",
-  "hello_react.js.map": "/packs/js/hello_react-b93cf38dbe2d861dad0e.js.map"
+  "media/images/background_1.png": "/packs/media/images/background_1-eec967dabaa611abf45c756eadc19336.png",
+  "media/images/background_2.png": "/packs/media/images/background_2-5e9fd31f38489cbe77f459d91a557196.png",
+  "media/images/background_3.jpg": "/packs/media/images/background_3-89bb07941fa4e537a409e562488a6e4c.jpg",
+  "media/images/background_4.jpg": "/packs/media/images/background_4-91086bd9cf23b95bab0c8aacdd93fca9.jpg",
+  "media/webfonts/fa-brands-400.ttf": "/packs/media/webfonts/fa-brands-400-26b80c88.ttf",
+  "media/webfonts/fa-brands-400.woff2": "/packs/media/webfonts/fa-brands-400-fdbb5585.woff2",
+  "media/webfonts/fa-regular-400.ttf": "/packs/media/webfonts/fa-regular-400-05fdd87b.ttf",
+  "media/webfonts/fa-regular-400.woff2": "/packs/media/webfonts/fa-regular-400-4f6a2dab.woff2",
+  "media/webfonts/fa-solid-900.ttf": "/packs/media/webfonts/fa-solid-900-ad1782c7.ttf",
+  "media/webfonts/fa-solid-900.woff2": "/packs/media/webfonts/fa-solid-900-83a538a0.woff2",
+  "media/webfonts/fa-v4compatibility.ttf": "/packs/media/webfonts/fa-v4compatibility-fa86b3c8.ttf",
+  "media/webfonts/fa-v4compatibility.woff2": "/packs/media/webfonts/fa-v4compatibility-c3ea317a.woff2"
 }

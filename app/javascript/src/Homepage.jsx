@@ -1,64 +1,179 @@
-import React from "react";
-import Layout from "./Layout";
+import React, { useState, useEffect } from "react";
+import SignupForm from "./SignupForm";
+import { safeCredentials, handleErrors } from "./utils/fetchHelper";
+import "./styles/homepage.scss";
+
+const images = require.context("../images", false, /\.(png|jpe?g|svg)$/);
 
 const Homepage = () => {
+  const [backgroundIndex, setBackgroundIndex] = useState(0);
+  const backgroundImages = [
+    images("./background_1.png"),
+    images("./background_2.png"),
+    images("./background_3.jpg"),
+  ];
+
+  useEffect(() => {
+    authenticateUser();
+
+    const backgroundTimer = setInterval(() => {
+      setBackgroundIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 10000);
+
+    return () => clearInterval(backgroundTimer);
+  }, []);
+
+  const authenticateUser = async () => {
+    try {
+      const response = await fetch("/api/sessions/authenticated", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+        },
+        credentials: "include",
+      });
+      const data = await response.json();
+      console.log("Authentication response:", data);
+      return data;
+    } catch (error) {
+      console.error("Authentication error:", error);
+      return { authenticated: false };
+    }
+  };
+  
+  
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const username = e.target.username.value;
+    const password = e.target.password.value;
+  
+    try {
+      const response = await fetch("/api/sessions", {
+        method: "POST",
+        ...safeCredentials(),
+        body: JSON.stringify({
+          user: {
+            username: username,
+            password: password,
+          },
+        }),
+      });
+  
+      const data = await response.json();
+      console.log("Login response:", data);
+
+      if (data.success) {
+        window.location.replace(data.redirect_url);
+      } else {
+        console.error("Login failed:", data.error);
+        alert(data.error || "Login failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("An error occurred during login. Please try again.")
+    }
+  };
+  
+
   return (
-    <Layout navbarProps={{ showLanguageSelector: true }}>
-      <div className="row">
-        <div className="front-card col-xs-10 col-xs-offset-1">
-          <div className="col-xs-6 welcome">
-            <div id="welcome-text">
-              <h1><strong>Welcome to Twitter.</strong></h1>
-              <p>
-                Connect with your friends &#8212; and other fascinating people.
-                Get in-the-moment updates on the things that interest you.
-                And watch events unfold, in real time, from every angle.
-              </p>
+    <div
+      id="homeback"
+      style={{
+        backgroundImage: `url(${backgroundImages[backgroundIndex]})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+      }}
+    >
+      <nav className="navbar navbar-default navbar-fixed-top">
+        <div className="container">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="/">
+              <i className="fab fa-twitter"></i>
+            </a>
+          </div>
+          <ul className="nav navbar-nav navbar-right">
+            <li className="dropdown">
+              <a
+                href="#"
+                className="dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                language: <strong>English</strong> <span className="caret"></span>
+              </a>
+              <ul className="dropdown-menu row" role="menu">
+                <li className="col-xs-12"><a href="#">Bahasa Melayu</a></li>
+                <li className="col-xs-12"><a href="#">Dansk</a></li>
+                <li className="col-xs-12"><a href="#">English</a></li>
+                <li className="col-xs-12"><a href="#">Suomi</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div className="container main-content">
+        <div className="row align-items-center">
+          <div className="col-md-6 welcome-section">
+            <h1><strong>Welcome to Twitter.</strong></h1>
+            <p>
+              Connect with your friends — and other fascinating people. Get
+              in-the-moment updates on the things that interest you. And watch
+              events unfold, in real time, from every angle.
+            </p>
+            <p>
+              <a 
+                href="https://tbka-portfolio.netlify.app/" 
+                id="twit-info" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Thomas Andersen - Fullstack Twitter Project
+              </a>
+            </p>
+          </div>
+          <div className="col-md-5 auth-section">
+            <div className="log-in">
+              <form onSubmit={handleLogin}>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="username"
+                    className="form-control username"
+                    placeholder="Username"
+                    required
+                  />
+                </div>
+                <div className="form-group password-row mt-3">
+                  <input
+                    type="password"
+                    name="password"
+                    className="form-control password"
+                    placeholder="Password"
+                    required
+                  />
+                  <button id="log-in-btn" className="btn btn-primary">
+                    Log in
+                  </button>
+                </div>
+                <div className="form-group">
+                  <label className="remember-me">
+                    <input type="checkbox" />
+                    <span> Remember me</span>
+                    <span> &#183; </span>
+                  </label>
+                  <a href="#">Forgot password?</a>
+                </div>
+              </form>
             </div>
-            <p><a href="#" id="twit-info">Hack Pacific - Backendium Twitter Project</a></p>
-            <p><a href="#" id="twit-account">Tweet and photo by @Hackpacific<br />3:20 PM - 15 December 2016</a></p>
-          </div>
-          <div className="log-in col-xs-4 col-xs-offset-1">
-            <form>
-              <div className="form-group">
-                <input type="text" className="form-control username" placeholder="Username" />
-              </div>
-              <div className="form-group col-xs-8">
-                <input type="password" className="form-control password" placeholder="Password" />
-              </div>
-              <button id="log-in-btn" className="btn btn-default btn-primary col-xs-3 col-xs-offset-1">
-                Log in
-              </button>
-              <label>
-                <input type="checkbox" />
-                <span>Remember me</span>
-                <span> &#183; </span>
-              </label>
-              <a href="#">Forgot password?</a>
-            </form>
-          </div>
-          <div className="sign-up col-xs-4 col-xs-offset-1">
-            <form>
-              <div className="new-to-t">
-                <p><strong>New to Twitter?</strong><span> Sign Up</span></p>
-              </div>
-              <div className="form-group">
-                <input type="text" className="form-control username" placeholder="Username" />
-              </div>
-              <div className="form-group">
-                <input type="email" className="form-control email" placeholder="Email" />
-              </div>
-              <div className="form-group">
-                <input type="password" className="form-control password" placeholder="Password" />
-              </div>
-              <button id="sign-up-btn" className="btn btn-default btn-warning pull-right">
-                Sign up for Twitter
-              </button>
-            </form>
+            <SignupForm />
           </div>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 

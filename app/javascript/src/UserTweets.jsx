@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import TweetCard from "./TweetCard";
 import TweetInput from "./TweetInput";
 import { safeCredentials, safeCredentialsFormData, handleErrors } from "./utils/fetchHelper";
-import CableApp from "./utils/cable";
 import "./styles/feeds.scss";
 
-const Feeds = () => {
+const UserTweets = () => {
+  const { username } = useParams();
   const [tweets, setTweets] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [userStats, setUserStats] = useState({ tweets: 0, following: 0, followers: 0 });
@@ -13,36 +14,14 @@ const Feeds = () => {
 
   useEffect(() => {
     authenticateUser();
-    fetchTweets();
-
-    const subscription = CableApp.cable.subscriptions.create(
-      { channel: "TweetsChannel" },
-      {
-        connected() {
-          console.log("Connected to TweetsChannel");
-        },
-        disconnected() {
-          console.error("Disconnected from TweetsChannel");
-        },
-        received: (data) => {
-          console.log("New tweet received via WebSocket:", data);
-          setTweets((prevTweets) => {
-            if (!prevTweets.some((tweet) => tweet.id === data.id)) {
-              return [data, ...prevTweets];
-            }
-            return prevTweets;
-          });
-        },
-        rejected() {
-          console.error("Subscription to TweetsChannel rejected.");
-        },
-      }
-    );
-
-    return () => {
-      subscription.unsubscribe();
-    };
   }, []);
+
+  useEffect(() => {
+    if (username) {
+      fetchUserTweets(username);
+      fetchUserStats(username);
+    }
+  }, [username]);
 
   const authenticateUser = async () => {
     try {
@@ -51,7 +30,6 @@ const Feeds = () => {
 
       if (data.authenticated) {
         setCurrentUser(data.user.username);
-        fetchUserStats(data.user.username);
       } else {
         window.location.replace("/");
       }
@@ -61,25 +39,24 @@ const Feeds = () => {
     }
   };
 
-  const fetchTweets = async () => {
+  const fetchUserTweets = async (username) => {
     try {
-      const response = await fetch("/api/tweets", safeCredentials());
+      const response = await fetch(`/api/users/${username}/tweets`, safeCredentials());
       const data = await handleErrors(response);
-      console.log("API Response:", data);
+
       const transformedTweets = data.map((tweet) => ({
         ...tweet,
         username: tweet.user?.username || "Unknown",
       }));
-  
+
       setTweets(transformedTweets);
     } catch (error) {
-      console.error("Error fetching tweets:", error);
+      console.error("Error fetching user tweets:", error);
     } finally {
       setLoadingTweets(false);
     }
   };
-  
-  
+
   const fetchUserStats = async (username) => {
     try {
       const response = await fetch(`/api/users/${username}`, safeCredentials());
@@ -95,10 +72,12 @@ const Feeds = () => {
   };
 
   const handlePostTweet = async (message, image) => {
+    if (username !== currentUser) return;
+
     const formData = new FormData();
     if (message) formData.append("tweet[message]", message);
     if (image) formData.append("tweet[image]", image);
-  
+
     try {
       const response = await fetch("/api/tweets", {
         method: "POST",
@@ -106,24 +85,24 @@ const Feeds = () => {
         ...safeCredentialsFormData(),
       });
       await handleErrors(response);
-      fetchTweets();
+      fetchUserTweets(currentUser);
       fetchUserStats(currentUser);
     } catch (error) {
       console.error("Error posting tweet:", error);
     }
   };
-  
-  
 
   const handleDeleteTweet = async (id) => {
+    if (username !== currentUser) return;
+
     try {
       const response = await fetch(`/api/tweets/${id}`, {
         method: "DELETE",
         ...safeCredentials(),
       });
       await handleErrors(response);
-      fetchTweets();
-      fetchUserStats(currentUser);
+      fetchUserTweets(username);
+      fetchUserStats(username);
     } catch (error) {
       console.error("Error deleting tweet:", error);
     }
@@ -142,10 +121,9 @@ const Feeds = () => {
       console.error("Error logging out:", error);
     }
   };
-  
 
   return (
-    <div>
+    <div className="user-tweets-page">
       <nav className="navbar navbar-default navbar-fixed-top">
         <div className="container">
           <div className="navbar-header">
@@ -162,41 +140,40 @@ const Feeds = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span id="user-icon" className="text-dark">User</span>
+                <span id="user-icon" className="text-dark">{currentUser || "User"}</span>
               </a>
               <ul className="dropdown-menu dropdown-menu-end">
                 <li><a className="dropdown-item" href={`/users/${currentUser}/tweets`}>Profile</a></li>
+                <li><a className="dropdown-item" href="/feeds">Feed</a></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li>
-                  <a 
-                    className="dropdown-item" 
-                    id="log-out" 
+                  <a
+                    className="dropdown-item"
+                    id="log-out"
                     href="#"
                     onClick={(e) => {
                       e.preventDefault();
                       handleLogout();
                     }}
-                    >
-                      Log out
-                    </a>
+                  >
+                    Log out
+                  </a>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
       </nav>
-    <div>
-    </div>
       <div className="feeds-container">
         <div className="col-left">
           <div className="profileCard">
             <div className="user-field">
-              <a className="username" href={`/users/${currentUser}/tweets`}>
-                {currentUser}
+              <a className="username" href={`/users/${username}/tweets`}>
+                {username}
               </a>
               <br />
-              <a className="screenName" href={`/users/${currentUser}/tweets`}>
-                @{currentUser}
+              <a className="screenName" href={`/users/${username}/tweets`}>
+                @{username}
               </a>
             </div>
             <div className="user-stats">
@@ -216,7 +193,7 @@ const Feeds = () => {
           </div>
         </div>
         <div className="col-center">
-          <TweetInput onPostTweet={handlePostTweet} />
+          {username === currentUser && <TweetInput onPostTweet={handlePostTweet} />}
           <div className="tweets">
             {loadingTweets ? (
               <p>Loading tweets...</p>
@@ -237,4 +214,4 @@ const Feeds = () => {
   );
 };
 
-export default Feeds;
+export default UserTweets;

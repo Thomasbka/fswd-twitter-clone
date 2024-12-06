@@ -1,0 +1,114 @@
+// Place all the styles related to the Homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@keyframes fade {
+  0% { background-image: url('~images/background_1.png'); }
+  33% { background-image: url('~images/background_2.png'); }
+  66% { background-image: url('~images/background_3.jpg'); }
+  100% { background-image: url('~images/background_1.png'); }
+}
+
+#homeback {
+  animation: fade 20s infinite;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #fff;
+}
+
+.navbar .fa-twitter {
+  color: #1da1f2;
+}
+
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 100px;
+
+  .row {
+    width: 100%;
+  }
+}
+
+.welcome-section {
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #fff;
+
+    a {
+      font-size: 0.9rem;
+      color: #1da1f2;
+      text-decoration: underline;
+    }
+  }
+
+  #twit-info {
+    font-size: 0.9rem;
+    color: #fff;
+    text-shadow: none;
+    text-decoration: underline;
+  }
+}
+
+.auth-section {
+  flex: 1; 
+  max-width: 400px;
+  margin-left: auto;
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  .log-in {
+    margin-bottom: 20px;
+  }
+
+  .btn-primary {
+    background-color: #1da1f2;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    min-width: 80px;
+  }
+
+  .remember-me {
+    margin-top: 10px;
+    color: #555;
+
+    a {
+      color: #1da1f2;
+      text-decoration: none;
+    }
+  }
+}
+
+.password-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .form-control.password {
+    flex: 1;
+    padding: 8px;
+  }
+
+  #log-in-btn {
+    padding: 6px 10px;
+    width: auto;
+  }
+}
