@@ -185,6 +185,7 @@ body {
 }
 
 .tweet {
+  position: relative;
   background: #fff;
   border: 1px solid #e1e8ed;
   border-radius: 5px;
@@ -229,3 +230,22 @@ body {
   color: #c81b4f;
 }
 
+.delete-tweet-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #e0245e;
+  cursor: pointer;
+}
+
+.delete-tweet-btn:hover {
+  color: #c81b4f;
+  transform: scale(1.1);
+}
+
+.delete-tweet-btn:focus {
+  outline: none;
+}

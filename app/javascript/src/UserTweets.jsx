@@ -61,6 +61,33 @@ const UserTweets = () => {
 
   return (
     <div className="user-tweets-page">
+      <nav className="navbar navbar-default navbar-fixed-top">
+        <div className="container">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="/">
+              <i className="fab fa-twitter"></i>
+            </a>
+          </div>
+          <ul className="nav navbar-nav navbar-right">
+            <li className="dropdown position-relative">
+              <a
+                href="#"
+                className="dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span id="user-icon" className="text-dark">User</span>
+              </a>
+              <ul className="dropdown-menu dropdown-menu-end">
+                <li><a className="dropdown-item" href="/feeds">Feed</a></li>
+                <li><hr className="dropdown-divider" /></li>
+                <li><a className="dropdown-item" id="log-out" href="#">Log out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <h1>{currentUser}'s Tweets</h1>
       <div className="tweets">
         {loadingTweets ? (

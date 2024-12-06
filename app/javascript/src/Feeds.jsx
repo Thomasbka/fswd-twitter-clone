@@ -149,17 +149,14 @@ const Feeds = () => {
                 <span id="user-icon" className="text-dark">User</span>
               </a>
               <ul className="dropdown-menu dropdown-menu-end">
-                <li><a className="dropdown-item" href="/my-tweets">My Tweets</a></li>
-                <li><a className="dropdown-item username" href="#">User</a></li>
+                <li><a className="dropdown-item" href={`/users/${currentUser}/tweets`}>Profile</a></li>
                 <li><hr className="dropdown-divider" /></li>
-                <li><a className="dropdown-item" href="#">Settings</a></li>
                 <li><a className="dropdown-item" id="log-out" href="#">Log out</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </nav>
-
     <div>
     </div>
       <div className="feeds-container">
