@@ -6,17 +6,41 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.navbar {
-  background-color: #fff;
-  border-bottom: 1px solid #e1e8ed;
-}
-
 .navbar-header {
   float: left;
 }
 
 .navbar-right {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding-left: 0;
+}
+
+.dropdown-menu {
+  min-width: 200px;
+  max-width: 250px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu-end {
+  right: 0 !important;
+  left: auto !important;
+  position: absolute !important;
+}
+
+.dropdown-toggle {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #e1e8ed;
+  padding: 10px 15px;
 }
 
 .fa-twitter {

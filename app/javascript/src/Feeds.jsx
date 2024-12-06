@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Layout from "./Layout";
 import TweetCard from "./TweetCard";
 import TweetInput from "./TweetInput";
 import { safeCredentials, handleErrors } from "./utils/fetchHelper";
@@ -139,7 +138,7 @@ const Feeds = () => {
             </a>
           </div>
           <ul className="nav navbar-nav navbar-right">
-            <li className="dropdown">
+            <li className="dropdown position-relative">
               <a
                 href="#"
                 className="dropdown-toggle"
@@ -147,9 +146,9 @@ const Feeds = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span id="user-icon">User</span>
+                <span id="user-icon" className="text-dark">User</span>
               </a>
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu dropdown-menu-end">
                 <li><a className="dropdown-item" href="/my-tweets">My Tweets</a></li>
                 <li><a className="dropdown-item username" href="#">User</a></li>
                 <li><hr className="dropdown-divider" /></li>
@@ -158,16 +157,9 @@ const Feeds = () => {
               </ul>
             </li>
           </ul>
-          <div className="search-bar col-xs-3 nav navbar-right">
-            <div className="input-group">
-              <input type="text" className="form-control search-input" placeholder="Search for..."/>
-              <span className="input-group-btn">
-                <button className="btn btn-default search-btn" type="button">Go!</button>
-              </span>
-            </div>
-          </div>
         </div>
       </nav>
+
     <div>
     </div>
       <div className="feeds-container">
