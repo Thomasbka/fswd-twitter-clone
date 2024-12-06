@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TweetCard from "./TweetCard";
 import TweetInput from "./TweetInput";
-import { safeCredentials, handleErrors } from "./utils/fetchHelper";
+import { safeCredentials, safeCredentialsFormData, handleErrors } from "./utils/fetchHelper";
 import CableApp from "./utils/cable";
 import "./styles/feeds.scss";
 
@@ -103,7 +103,7 @@ const Feeds = () => {
       const response = await fetch("/api/tweets", {
         method: "POST",
         body: formData,
-        ...safeCredentials(),
+        ...safeCredentialsFormData(),
       });
       await handleErrors(response);
       fetchTweets();
@@ -112,6 +112,7 @@ const Feeds = () => {
       console.error("Error posting tweet:", error);
     }
   };
+  
   
 
   const handleDeleteTweet = async (id) => {

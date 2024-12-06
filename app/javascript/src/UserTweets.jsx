@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TweetCard from "./TweetCard";
 import TweetInput from "./TweetInput";
-import { safeCredentials, handleErrors } from "./utils/fetchHelper";
+import { safeCredentials, safeCredentialsFormData, handleErrors } from "./utils/fetchHelper";
 import "./styles/feeds.scss";
 
 const UserTweets = () => {
@@ -41,12 +41,12 @@ const UserTweets = () => {
     try {
       const response = await fetch(`/api/users/${username}/tweets`, safeCredentials());
       const data = await handleErrors(response);
-      
+
       const transformedTweets = data.map((tweet) => ({
         ...tweet,
         username: tweet.user?.username || "Unknown",
       }));
-      
+
       setTweets(transformedTweets);
     } catch (error) {
       console.error("Error fetching user tweets:", error);
@@ -54,7 +54,6 @@ const UserTweets = () => {
       setLoadingTweets(false);
     }
   };
-  
 
   const fetchUserStats = async (username) => {
     try {
@@ -79,11 +78,11 @@ const UserTweets = () => {
       const response = await fetch("/api/tweets", {
         method: "POST",
         body: formData,
-        ...safeCredentials(),
+        ...safeCredentialsFormData(),
       });
       await handleErrors(response);
-      fetchUserTweets(currentUser);
-      fetchUserStats(currentUser);
+      fetchUserTweets(currentUser); // Refresh user tweets
+      fetchUserStats(currentUser); // Refresh user stats
     } catch (error) {
       console.error("Error posting tweet:", error);
     }
@@ -96,8 +95,8 @@ const UserTweets = () => {
         ...safeCredentials(),
       });
       await handleErrors(response);
-      fetchUserTweets(currentUser);
-      fetchUserStats(currentUser);
+      fetchUserTweets(currentUser); // Refresh user tweets
+      fetchUserStats(currentUser); // Refresh user stats
     } catch (error) {
       console.error("Error deleting tweet:", error);
     }
