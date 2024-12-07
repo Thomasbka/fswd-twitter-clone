@@ -1,20 +1,23 @@
 module Api
   class UsersController < ApplicationController
     def create
+      Rails.logger.debug "Params received: #{params.inspect}"
       @user = User.new(user_params)
-
+    
       if @user.save
         session = @user.sessions.create
         cookies.permanent.signed[:twitter_session_token] = {
           value: session.token,
           httponly: true
         }
-
+    
         render json: { success: true, user: @user }
       else
+        Rails.logger.debug "User creation failed: #{@user.errors.full_messages}"
         render json: { success: false, errors: @user.errors.full_messages }, status: :unprocessable_entity
       end
     end
+    
 
     def show
       @user = User.find_by(username: params[:username])
