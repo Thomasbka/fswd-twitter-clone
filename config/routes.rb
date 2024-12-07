@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'homepage#index'
 
+  mount ActiveStorage::Engine => '/rails/active_storage'
+
   namespace :api do
     resources :feeds, only: [:index]
     resources :tweets, only: [:index, :create, :destroy]
