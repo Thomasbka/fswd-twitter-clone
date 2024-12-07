@@ -11,6 +11,7 @@ module Api
 
     def create
       puts "Params received: #{params.inspect}"
+    
       token = cookies.signed[:twitter_session_token]
       session = Session.find_by(token: token)
       user = session&.user
@@ -20,9 +21,25 @@ module Api
       if user.tweets.where('created_at > ?', Time.now - 60.minutes).count >= 30
         return render json: { error: 'Rate limit exceeded (30 tweets/hour)' }, status: :too_many_requests
       end
-
+    
       @tweet = user.tweets.new(message: params[:tweet][:message])
-      @tweet.image.attach(params[:tweet][:image]) if params[:tweet][:image].present?
+    
+      if params[:tweet][:image].present?
+        uploaded_file = params[:tweet][:image]
+        puts "Uploaded file: #{uploaded_file.inspect}"
+    
+        begin
+          @tweet.image.attach(
+            io: uploaded_file.tempfile,
+            filename: uploaded_file.original_filename,
+            content_type: uploaded_file.content_type
+          )
+          puts "Image attached successfully"
+        rescue => e
+          puts "Failed to attach image: #{e.message}"
+          return render json: { error: "Image upload failed: #{e.message}" }, status: :unprocessable_entity
+        end
+      end
     
       if @tweet.save
         render json: @tweet.as_json(include: { user: { only: [:username] } }), status: :created
@@ -30,7 +47,6 @@ module Api
         render json: { error: @tweet.errors.full_messages }, status: :unprocessable_entity
       end
     end
-    
     
 
     def destroy

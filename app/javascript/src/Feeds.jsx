@@ -69,6 +69,7 @@ const Feeds = () => {
       const transformedTweets = data.map((tweet) => ({
         ...tweet,
         username: tweet.user?.username || "Unknown",
+        image: tweet.image || null,
       }));
   
       setTweets(transformedTweets);
@@ -99,6 +100,10 @@ const Feeds = () => {
     if (message) formData.append("tweet[message]", message);
     if (image) formData.append("tweet[image]", image);
   
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}:`, value);
+    }
+  
     try {
       const response = await fetch("/api/tweets", {
         method: "POST",
@@ -112,7 +117,6 @@ const Feeds = () => {
       console.error("Error posting tweet:", error);
     }
   };
-  
   
 
   const handleDeleteTweet = async (id) => {

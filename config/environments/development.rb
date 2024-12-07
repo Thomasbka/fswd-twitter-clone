@@ -58,5 +58,5 @@ Rails.application.configure do
   end
 
   # Using the Amazon S3 settings for Active Storage
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
 end
